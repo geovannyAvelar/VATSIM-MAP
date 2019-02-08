@@ -1,0 +1,44 @@
+<agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker *ngFor="let user of users;  let i = index"
+                [title]="user.callsign"
+                [iconUrl]='user.client_type == "PILOT" ? airplaneIcon : atcIcon'
+                [latitude]="user.latitude" [longitude]="user.longitude">
+        <!--
+        <agm-info-window>
+            <strong class="callsign">
+                {{user.callsign}}
+            </strong>
+
+            <p>{{user.real_name}} ({{user.cid}})</p>
+
+            <p *ngIf="user.client_type == 'PILOT'">
+                Altitude: {{user.altitude}}' (planned: {{user.planned_altitude}})
+            </p>
+
+            <p *ngIf="user.client_type == 'PILOT'">
+                Heading: {{user.heading}}
+            </p>
+
+            <p *ngIf="user.client_type == 'PILOT'">
+                Ground speed: {{user.ground_speed}}
+            </p>
+
+            <p *ngIf="user.client_type == 'PILOT'">
+                Transponder: {{user.transponder}}
+            </p>
+        </agm-info-window>
+        -->
+    </agm-marker>
+</agm-map>
+
+<span class="text-white">
+    Airplanes icons by 
+    <a href="https://www.flaticon.com/authors/pixel-perfect" target="_blank">Pixel Perfect</a>
+    (<a href="https://www.flaticon.com/packs/transportation-103" target="_blank">Transportation pack</a>)
+</span>
+
+<span class="text-white">
+    Antenna icon by 
+    <a href="https://www.flaticon.com/authors/turkkub" target="_blank">turkkub</a>
+    (<a href="https://www.flaticon.com/packs/communication-connectivity-5" target="_blank">Communication Connectivity</a>)
+</span>
